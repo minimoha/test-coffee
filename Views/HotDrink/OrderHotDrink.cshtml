@@ -1,0 +1,65 @@
+﻿@model CoffeeShop.Models.OrderModel<HotDrink>
+
+@{
+    ViewData["Title"] = "Index";
+
+    var tt = Model;
+
+    var ii = "iii";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.HotDrinkName)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.OrderItem) {
+        @*<tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HotDrinkName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HotDrinkId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HotDrinkId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HotDrinkId">Delete</a>
+            </td>
+        </tr>*@
+
+       @* <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HotDrinkId" />
+            <div class="form-group">
+                <label asp-for="HotDrinkName" class="control-label"></label>
+                <input asp-for="HotDrinkName" class="form-control" />
+                <span asp-validation-for="HotDrinkName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>*@
+        
+        
+        <form asp-action="Edit">
+                <input type="hidden" asp-for="OrderItem" />
+            <div class="form-group">
+                    <label asp-for="OrderItem" class="control-label"></label>
+                    <input asp-for="OrderItem" class="form-control" />
+                    <span asp-validation-for="OrderItem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+}
+    </tbody>
+</table>

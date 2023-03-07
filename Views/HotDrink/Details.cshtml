@@ -1,0 +1,24 @@
+﻿@model CoffeeShop.Models.HotDrink
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>HotDrink</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HotDrinkName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HotDrinkName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.HotDrinkId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
